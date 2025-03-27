@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "101535643169",
+    "project_id": "cs-note-app",
+    "storage_bucket": "cs-note-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101535643169:android:eb3e2aae2c16589172d560",
+        "android_client_info": {
+          "package_name": "com.hansheung.csnoteapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSyb3mDRn33AuY5K9vA9DEvVZnNDEx0SU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MOB_22_Clean</string>
+    <string name="error_message">Something went wrong</string>
+    <string name="enter_title">Enter title</string>
+    <string name="enter_desc">Enter description</string>
+    <string name="submit">Submit</string>
+</resources>
