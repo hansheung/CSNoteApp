@@ -58,8 +58,10 @@ class HomeFragment : BaseFragment() {
         viewModel.handleIntent(NotesIntent.LoadNotes)
 
         binding.fabAdd.setOnClickListener{
-            val randomNote = generateRandomNote()
-            viewModel.handleIntent(NotesIntent.AddNote(randomNote))
+//            val randomNote = generateRandomNote()
+//            viewModel.handleIntent(NotesIntent.AddNote(randomNote))
+            val action = HomeFragmentDirections.actionHomeFragmentToManageNoteFragment()
+            findNavController().navigate(action)
         }
 
     }
@@ -110,7 +112,7 @@ class HomeFragment : BaseFragment() {
         return Note(
             title = "$randomTitle Note",
             desc = randomContent,
-            color = randomColor
+//            color = randomColor
         )
     }
 

@@ -4,9 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="error">#AA2929</color>
     <color name="success">#2F8631</color>
-    <color name="grey">#908E8E</color>
-    <color name="green">#57C82F</color>
-    <color name="purple">#6554B3</color>
-    <color name="red">#DE1844</color>
-
+    <color name="green">#00FF00</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="purple">#800080</color>
+    <color name="yellow">#FFD700</color>
+    <color name="grey">#E7E7E7</color>
+    <color name="blueBtn">#3291ff</color>
+    <color name="redBtn">#b32d2c</color>
 </resources>

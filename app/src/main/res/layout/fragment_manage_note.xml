@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+        <data>
+                <variable
+                    name="viewModel"
+                    type="com.hansheung.note_taking.ui.addNote.AddNoteViewModel" />
+        </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="16dp">
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Title"/>
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter title"
+            android:background="@drawable/edit_text_bg"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_height="wrap_content"
+            android:text="Description" />
+        <EditText
+            android:id="@+id/etDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter description"
+            android:background="@drawable/edit_text_bg"
+            android:minLines="8"
+            android:gravity="start"
+            android:padding="10dp"
+            />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+                <View
+                    android:id="@+id/colorBox1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/green"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <View
+                    android:id="@+id/colorBox2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/cyan"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <View
+                    android:id="@+id/colorBox3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/red"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <View
+                    android:id="@+id/colorBox4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/purple"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <View
+                    android:id="@+id/colorBox5"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/yellow"
+                    android:layout_marginHorizontal="8dp"/>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:backgroundTint="@color/blueBtn"
+            app:cornerRadius="5dp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+</layout>
