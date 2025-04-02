@@ -4,5 +4,5 @@ data class Note (
     val id: String = "",
     val title: String = "",
     val desc: String = "",
-    val color: String = "#FFFFFF"
+    val color: String = ""
 )

@@ -21,7 +21,11 @@
         android:id="@+id/homeFragment"
         android:name="com.hansheung.csnoteapp.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_manageNoteFragment"
+            app:destination="@id/manageNoteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.hansheung.mob21firebase.ui.user.login.LoginFragment"
@@ -36,4 +40,13 @@
         android:name="com.hansheung.mob21firebase.ui.user.registration.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register"/>
+    <fragment
+        android:id="@+id/manageNoteFragment"
+        android:name="com.hansheung.csnoteapp.ui.manageNote.addNote.AddNoteFragment"
+        android:label="manageNoteFragment"
+        tools:layout="@layout/fragment_manage_note">
+        <action
+            android:id="@+id/action_manageNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
