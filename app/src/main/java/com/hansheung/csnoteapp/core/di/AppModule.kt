@@ -1,5 +1,7 @@
 package com.hansheung.mob22_mvi.di
 
+import com.hansheung.csnoteapp.data.repo.NotesRepo
+import com.hansheung.csnoteapp.data.repo.NotesRepoFSImpl
 import com.hansheung.mob21firebase.core.service.AuthService
 import com.hansheung.mob21firebase.core.service.AuthServiceImpl
 import dagger.Module
@@ -20,6 +22,11 @@ class AppModule {
         return "Hello Dagger Hilt 2 1"
     }
 
+    @Provides
+    @Singleton
+    fun provideNotesRepo(authService: AuthService): NotesRepo {
+        return NotesRepoFSImpl(authService = authService)
+    }
 
     @Provides
     @Singleton
