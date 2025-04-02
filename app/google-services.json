@@ -12,7 +12,20 @@
           "package_name": "com.hansheung.csnoteapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "101535643169-32igd9erjn5rip5eh7b6h6ri0onrg20a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hansheung.csnoteapp",
+            "certificate_hash": "e7a9be547b8773206ebde1f61b0084ebcb10791c"
+          }
+        },
+        {
+          "client_id": "101535643169-lcgceagbkhihrt3obue2hrit8smt4m05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBSyb3mDRn33AuY5K9vA9DEvVZnNDEx0SU"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101535643169-lcgceagbkhihrt3obue2hrit8smt4m05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
