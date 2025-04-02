@@ -44,9 +44,5 @@
         android:id="@+id/manageNoteFragment"
         android:name="com.hansheung.csnoteapp.ui.manageNote.addNote.AddNoteFragment"
         android:label="manageNoteFragment"
-        tools:layout="@layout/fragment_manage_note">
-        <action
-            android:id="@+id/action_manageNoteFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_manage_note"/>
 </navigation>

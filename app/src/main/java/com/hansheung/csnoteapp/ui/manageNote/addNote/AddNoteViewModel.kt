@@ -16,13 +16,15 @@ class AddNoteViewModel@Inject constructor(
     private val repo: NotesRepo
 ) : BaseManageNoteViewModel() {
 
-
+    override fun handleIntent(intent: NotesIntent){
+        submitNote((intent as NotesIntent.AddNote).note)
+    }
 
     fun logout(){
         authService.logout()
     }
 
-    override fun submitNote(note: Note) {
+    private fun submitNote(note: Note) {
         viewModelScope.launch {
             errorHandler {
                 require(note.title.isNotEmpty()){"Title cannot be empty"}
@@ -38,8 +40,3 @@ class AddNoteViewModel@Inject constructor(
 sealed class NotesIntent {
     data class AddNote(val note: Note) : NotesIntent()
 }
-
-data class NotesState(
-    val notes: List<Note> = emptyList(),
-    val error: String? = null
-)

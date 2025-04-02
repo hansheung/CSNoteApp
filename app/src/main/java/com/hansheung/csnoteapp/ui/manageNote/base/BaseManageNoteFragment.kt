@@ -13,6 +13,7 @@ import com.hansheung.csnoteapp.databinding.FragmentManageNoteBinding
 import com.hansheung.csnoteapp.ui.HomeFragmentDirections
 import com.hansheung.csnoteapp.ui.manageNote.addNote.AddNoteFragmentDirections
 import com.hansheung.mob21firebase.ui.base.BaseFragment
+import com.hansheung.note_taking.ui.addNote.NotesIntent
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -76,12 +77,15 @@ abstract class BaseManageNoteFragment: BaseFragment() {
             val title = binding.etTitle.text.toString()
             val desc = binding.etDesc.text.toString()
 
-            viewModel.submitNote(Note(title=title, desc = desc, color=selectedColor))
+            val note = Note(title = title, desc = desc, color = selectedColor)
+            viewModel.handleIntent(NotesIntent.AddNote(note))
+
+            //viewModel.handleIntent(Note(title=title, desc = desc, color=selectedColor))
 
             lifecycleScope.launch {
                 viewModel.finish.collect{
-                    val action = AddNoteFragmentDirections.actionManageNoteFragmentToHomeFragment()
-                    findNavController().navigate(action)
+
+                    findNavController().popBackStack()
                 }
             }
         }
