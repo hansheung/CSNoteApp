@@ -25,7 +25,7 @@ class AddNoteViewModel@Inject constructor(
         authService.logout()
     }
 
-    private fun submitNote(note: Note) {
+    override fun submitNote(note: Note) {
         viewModelScope.launch {
             errorHandler {
                 require(note.title.isNotEmpty()){"Title cannot be empty"}

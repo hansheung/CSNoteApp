@@ -5,7 +5,7 @@ import com.hansheung.csnoteapp.core.CustomException
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 
-open class BaseViewModel: ViewModel() {
+abstract class BaseViewModel: ViewModel() {
 
     //One regardless of other receive, Mutable State flow
     protected val _error = MutableSharedFlow<String>()

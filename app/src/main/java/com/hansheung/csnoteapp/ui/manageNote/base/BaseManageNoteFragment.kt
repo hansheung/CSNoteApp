@@ -84,8 +84,8 @@ abstract class BaseManageNoteFragment: BaseFragment() {
 
             lifecycleScope.launch {
                 viewModel.finish.collect{
-
-                    findNavController().popBackStack()
+                    val action = AddNoteFragmentDirections.actionManageNoteFragmentToHomeFragment()
+                    findNavController().navigate(action)
                 }
             }
         }
