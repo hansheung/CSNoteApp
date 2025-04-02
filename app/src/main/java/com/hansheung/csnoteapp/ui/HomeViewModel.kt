@@ -31,6 +31,7 @@ class HomeViewModel @Inject constructor(
         when(intent){
             NotesIntent.LoadNotes -> loadNotes()
             is NotesIntent.AddNote -> addNote(intent.note)
+            is NotesIntent.DeleteNote -> delete(intent.noteId)
         }
     }
 
@@ -50,6 +51,12 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun delete(Id:String){
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.deleteNote(Id)
+        }
+    }
+
     fun logout(){
         authService.logout()
     }
@@ -60,6 +67,7 @@ class HomeViewModel @Inject constructor(
 sealed class NotesIntent {
     object LoadNotes : NotesIntent()
     data class AddNote(val note: Note) : NotesIntent()
+    data class DeleteNote(val noteId: String) : NotesIntent()
 }
 
 data class NotesState(
