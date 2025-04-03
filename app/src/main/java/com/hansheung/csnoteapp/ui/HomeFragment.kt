@@ -15,6 +15,7 @@ import com.hansheung.csnoteapp.R
 import com.hansheung.csnoteapp.data.model.Note
 import com.hansheung.csnoteapp.databinding.FragmentHomeBinding
 import com.hansheung.csnoteapp.ui.adapter.NoteAdapter
+import com.hansheung.csnoteapp.ui.manageNote.BottomSheetFragment
 import com.hansheung.mob21firebase.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -81,17 +82,17 @@ class HomeFragment : BaseFragment() {
         binding.rvNotes.adapter = adapter
         binding.rvNotes.layoutManager = GridLayoutManager(requireContext(),2)
 
-//        adapter.setClickListener(object: NoteAdapter.ClickListener{
-//            override fun onClickItem(item: Note) {
+        adapter.setClickListener(object: NoteAdapter.ClickListener{
+            override fun onClickItem(item: Note) {
 //                val action = HomeFragmentDirections.actionHomeToEditNote(item.id!!)
 //                findNavController().navigate(action)
-//            }
-//
-//            override fun onLongClickItem(item: Note) {
-//                BottomSheetFragment(item.id!!).show(parentFragmentManager, "Bottom Sheet Dialog")
-//            }
-//
-//        })
+            }
+
+            override fun onLongClickItem(item: Note) {
+                BottomSheetFragment(item.id!!).show(parentFragmentManager, "Bottom Sheet Dialog")
+            }
+
+        })
     }
 
     private fun generateRandomNote(): Note {
