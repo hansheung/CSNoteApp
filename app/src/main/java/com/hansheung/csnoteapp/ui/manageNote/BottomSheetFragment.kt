@@ -9,14 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
-import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.hansheung.csnoteapp.databinding.FragmentBottomSheetBinding
 import com.hansheung.csnoteapp.ui.HomeViewModel
-import com.hansheung.csnoteapp.ui.manageNote.note.NoteFragmentDirections
 import com.hansheung.csnoteapp.R
+import com.hansheung.csnoteapp.ui.HomeFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,7 +38,7 @@ class BottomSheetFragment(
         super.onViewCreated(view, savedInstanceState)
 
         binding.editOption.setOnClickListener {
-            val action = NoteFragmentDirections.actionNoteFragmentToEditNoteFragment(id)
+            val action = HomeFragmentDirections.actionHomeFragmentToNoteDetailFragment(id)
             findNavController().navigate(action)
             dialog?.dismiss()
         }

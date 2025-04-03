@@ -4,20 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.hansheung.csnoteapp.R
-import com.hansheung.csnoteapp.data.model.Note
 import com.hansheung.csnoteapp.databinding.FragmentManageNoteBinding
-import com.hansheung.csnoteapp.ui.HomeFragmentDirections
 import com.hansheung.mob21firebase.ui.base.BaseFragment
-import com.hansheung.note_taking.ui.addNote.NotesIntent
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
-
 
 abstract class BaseManageNoteFragment: BaseFragment() {
     protected lateinit var binding: FragmentManageNoteBinding

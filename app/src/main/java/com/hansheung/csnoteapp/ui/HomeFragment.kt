@@ -77,10 +77,9 @@ class HomeFragment : BaseFragment() {
             }
 
             override fun onLongClickItem(item: Note) {
-                BottomSheetFragment(item.id!!).show(parentFragmentManager, "Bottom Sheet Dialog")
+                BottomSheetFragment(item.id).show(parentFragmentManager, "Bottom Sheet Dialog")
             }
         })
     }
-
 
 }
