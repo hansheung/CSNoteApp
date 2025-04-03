@@ -29,6 +29,8 @@ class AddNoteViewModel@Inject constructor(
             errorHandler {
                 require(note.title.isNotEmpty()){"Title cannot be empty"}
                 require(note.desc.isNotEmpty()){"Description cannot be empty"}
+                require(note.title.length < 50){"Title cannot be more than 50 characters"}
+                require(note.desc.length < 120){"Description cannot be more than 120 characters"}
                 repo.addNote(note)
                 _finish.emit(Unit)
             }
