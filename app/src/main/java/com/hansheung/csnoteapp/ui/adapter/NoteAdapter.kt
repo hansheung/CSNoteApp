@@ -44,8 +44,8 @@ class NoteAdapter(
         fun bind(note: Note): Boolean{
 
             binding.run{
-                tvTitle.text = note.title
-                tvDesc.text = note.desc
+                tvTitle.text = note.title.crop(10)
+                tvDesc.text = note.desc.crop(20)
                 cvNote.setCardBackgroundColor(Color.parseColor(note.color))
             }
 

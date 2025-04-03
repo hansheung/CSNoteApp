@@ -62,7 +62,6 @@ class NotesRepoFSImpl(
     }
 
     override suspend fun updateNote(note: Note) {
-        Log.d("debugging", note.toString())
         getCollectionRef().document(note.id).set(note).await()
     }
 }
