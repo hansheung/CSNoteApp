@@ -78,6 +78,18 @@ class HomeFragment : BaseFragment() {
             override fun onLongClickItem(item: Note) {
                 //BottomSheetFragment(item.id!!).show(parentFragmentManager, "Bottom Sheet Dialog")
             }
+        adapter.setClickListener(object: NoteAdapter.ClickListener{
+            override fun onClickItem(item: Note) {
+//                val action = HomeFragmentDirections.actionHomeToEditNote(item.id!!)
+//                findNavController().navigate(action)
+            }
+
+            override fun onLongClickItem(item: Note) {
+                BottomSheetFragment(item.id!!).show(parentFragmentManager, "Bottom Sheet Dialog")
+            }
+
+        })
+    }
 
         })
     }

@@ -14,6 +14,8 @@ import com.hansheung.csnoteapp.data.model.Note
 import com.hansheung.csnoteapp.databinding.FragmentManageNoteBinding
 import com.hansheung.csnoteapp.ui.HomeFragmentDirections
 import com.hansheung.mob21firebase.ui.base.BaseFragment
+import com.hansheung.note_taking.ui.addNote.NotesIntent
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
