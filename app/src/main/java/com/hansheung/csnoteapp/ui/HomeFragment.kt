@@ -39,17 +39,8 @@ class HomeFragment : BaseFragment() {
     override fun setupUiComponents(view: View) {
         super.setupUiComponents(view)
 
-        val toolBarLayout = requireActivity().findViewById<LinearLayout>(R.id.toolbarLayout)
-        toolBarLayout.visibility = View.VISIBLE
-
         val toolBarTitle = requireActivity().findViewById<TextView>(R.id.toolbarTitle)
         toolBarTitle.text = "My Notes"
-
-        val tvLogout = requireActivity().findViewById<TextView>(R.id.tvLogout)
-        tvLogout.setOnClickListener {
-            viewModel.logout()
-            findNavController().navigate(HomeFragmentDirections.actionToLoginFragment())
-        }
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
@@ -59,8 +50,6 @@ class HomeFragment : BaseFragment() {
         viewModel.handleIntent(NotesIntent.LoadNotes)
 
         binding.fabAdd.setOnClickListener{
-//            val randomNote = generateRandomNote()
-//            viewModel.handleIntent(NotesIntent.AddNote(randomNote))
             val action = HomeFragmentDirections.actionHomeFragmentToManageNoteFragment()
             findNavController().navigate(action)
         }
@@ -76,7 +65,6 @@ class HomeFragment : BaseFragment() {
         }
     }
 
-
     private fun setupAdapter(){
         adapter = NoteAdapter(emptyList())
         binding.rvNotes.adapter = adapter
@@ -84,37 +72,14 @@ class HomeFragment : BaseFragment() {
 
         adapter.setClickListener(object: NoteAdapter.ClickListener{
             override fun onClickItem(item: Note) {
-//                val action = HomeFragmentDirections.actionHomeToEditNote(item.id!!)
-//                findNavController().navigate(action)
+                val action = HomeFragmentDirections.actionHomeFragmentToNoteDetailFragment(item.id)
+                findNavController().navigate(action)
             }
 
             override fun onLongClickItem(item: Note) {
-                BottomSheetFragment(item.id!!).show(parentFragmentManager, "Bottom Sheet Dialog")
+                BottomSheetFragment(item.id).show(parentFragmentManager, "Bottom Sheet Dialog")
             }
-
         })
-    }
-
-    private fun generateRandomNote(): Note {
-        val titles = listOf("Work", "Grocery", "Reminder", "Study", "Idea")
-        val contents = listOf(
-            "Lorem ipsum dolor sit amet",
-            "Finish homework before 5pm",
-            "Buy milk, eggs, and bread",
-            "Prepare for meeting tomorrow",
-            "Remember to stretch!"
-        )
-        val colors = listOf("#FFCDD2", "#C8E6C9", "#BBDEFB", "#FFF9C4", "#D1C4E9")
-
-        val randomTitle = titles.random()
-        val randomContent = contents.random()
-        val randomColor = colors.random()
-
-        return Note(
-            title = "$randomTitle Note",
-            desc = randomContent,
-//            color = randomColor
-        )
     }
 
 }

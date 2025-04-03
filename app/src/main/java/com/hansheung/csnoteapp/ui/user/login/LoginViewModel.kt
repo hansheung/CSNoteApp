@@ -15,9 +15,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor (
-    private val authService: AuthService,
+    authService: AuthService,
 
-): BaseViewModel() {
+): BaseViewModel(authService) {
     private val _success = MutableSharedFlow<Unit>()
     val success = _success.asSharedFlow()
 

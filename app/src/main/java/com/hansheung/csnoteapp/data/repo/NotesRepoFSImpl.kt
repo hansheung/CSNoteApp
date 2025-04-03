@@ -1,5 +1,6 @@
 package com.hansheung.csnoteapp.data.repo
 
+import android.util.Log
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -47,7 +48,8 @@ class NotesRepoFSImpl(
     }
 
     override suspend fun addNote(note: Note) {
-        getCollectionRef().add(note).await()
+        val ref = getCollectionRef().document()
+        ref.set(note.copy(id = ref.id)).await()
     }
 
     override suspend fun getNote(id: String): Note? {
@@ -60,6 +62,7 @@ class NotesRepoFSImpl(
     }
 
     override suspend fun updateNote(note: Note) {
+        Log.d("debugging", note.toString())
         getCollectionRef().document(note.id).set(note).await()
     }
 }

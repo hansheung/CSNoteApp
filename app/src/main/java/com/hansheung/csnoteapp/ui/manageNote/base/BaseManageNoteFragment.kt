@@ -5,24 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.hansheung.csnoteapp.R
-import com.hansheung.csnoteapp.data.model.Note
 import com.hansheung.csnoteapp.databinding.FragmentManageNoteBinding
-import com.hansheung.csnoteapp.ui.HomeFragmentDirections
-import com.hansheung.csnoteapp.ui.manageNote.addNote.AddNoteFragmentDirections
 import com.hansheung.mob21firebase.ui.base.BaseFragment
-import com.hansheung.note_taking.ui.addNote.NotesIntent
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
-
 
 abstract class BaseManageNoteFragment: BaseFragment() {
     protected lateinit var binding: FragmentManageNoteBinding
     abstract override val viewModel: BaseManageNoteViewModel
-    private var selectedColorBox: View? = null
-    private var selectedColor: String = "#FFFFFF"
+    var selectedColorBox: View? = null
+    var selectedColor: String = "#FFFFFF"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +25,6 @@ abstract class BaseManageNoteFragment: BaseFragment() {
 
     override fun setupUiComponents(view: View) {
         super.setupUiComponents(view)
-
         // Set background drawables
         binding.colorBox1.setBackgroundResource(R.drawable.color_box_green)
         binding.colorBox2.setBackgroundResource(R.drawable.color_box_cyan)
@@ -73,22 +63,7 @@ abstract class BaseManageNoteFragment: BaseFragment() {
             }
         }
 
-        binding.btnSubmit.setOnClickListener {
-            val title = binding.etTitle.text.toString()
-            val desc = binding.etDesc.text.toString()
 
-            val note = Note(title = title, desc = desc, color = selectedColor)
-            viewModel.handleIntent(NotesIntent.AddNote(note))
-
-            //viewModel.handleIntent(Note(title=title, desc = desc, color=selectedColor))
-
-            lifecycleScope.launch {
-                viewModel.finish.collect{
-                    val action = AddNoteFragmentDirections.actionManageNoteFragmentToHomeFragment()
-                    findNavController().navigate(action)
-                }
-            }
-        }
     }
 
 }
