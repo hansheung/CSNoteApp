@@ -14,11 +14,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.hansheung.csnoteapp.R
+import com.hansheung.csnoteapp.data.model.Note
 import com.hansheung.csnoteapp.ui.HomeFragmentDirections
 import com.hansheung.csnoteapp.ui.NotesIntent
 import com.hansheung.csnoteapp.ui.manageNote.base.BaseManageNoteFragment
 import com.hansheung.note_taking.ui.addNote.AddNoteViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class AddNoteFragment : BaseManageNoteFragment() {
@@ -28,18 +30,22 @@ class AddNoteFragment : BaseManageNoteFragment() {
     override fun setupUiComponents(view: View) {
         super.setupUiComponents(view)
 
-        val toolBarLayout = requireActivity().findViewById<LinearLayout>(R.id.toolbarLayout)
-        toolBarLayout.visibility = View.VISIBLE
-
         val toolBarTitle = requireActivity().findViewById<TextView>(R.id.toolbarTitle)
         toolBarTitle.text = "Add Note"
 
-        val tvLogout = requireActivity().findViewById<TextView>(R.id.tvLogout)
-        tvLogout.setOnClickListener {
-            viewModel.logout()
-            findNavController().navigate(HomeFragmentDirections.actionToLoginFragment())
+        binding.btnSubmit.setOnClickListener {
+            val title = binding.etTitle.text.toString()
+            val desc = binding.etDesc.text.toString()
+
+            val note = Note(title = title, desc = desc, color = selectedColor)
+
+            viewModel.handleIntent(com.hansheung.csnoteapp.ui.manageNote.base.NotesIntent.SubmitNote(note))
+
+            lifecycleScope.launch {
+                viewModel.finish.collect{
+                    findNavController().popBackStack()
+                }
+            }
         }
     }
-
-
 }

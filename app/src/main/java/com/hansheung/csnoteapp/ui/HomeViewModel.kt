@@ -17,9 +17,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val authService: AuthService,
+    authService: AuthService,
     private val repo: NotesRepo
-) : BaseViewModel() {
+) : BaseViewModel(authService) {
 
     private val _state = MutableStateFlow(NotesState())
     val state = _state.asStateFlow()
@@ -30,7 +30,6 @@ class HomeViewModel @Inject constructor(
     fun handleIntent(intent: NotesIntent){
         when(intent){
             NotesIntent.LoadNotes -> loadNotes()
-            is NotesIntent.AddNote -> addNote(intent.note)
         }
     }
 
@@ -43,23 +42,10 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
-
-    private fun addNote(note: Note) {
-        viewModelScope.launch {
-            repo.addNote(note)
-        }
-    }
-
-    fun logout(){
-        authService.logout()
-    }
-
-
 }
 
 sealed class NotesIntent {
     object LoadNotes : NotesIntent()
-    data class AddNote(val note: Note) : NotesIntent()
 }
 
 data class NotesState(

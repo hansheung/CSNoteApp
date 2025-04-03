@@ -4,6 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.hansheung.csnoteapp.data.model.Note
 import com.hansheung.csnoteapp.data.repo.NotesRepo
 import com.hansheung.csnoteapp.ui.manageNote.base.BaseManageNoteViewModel
+import com.hansheung.csnoteapp.ui.manageNote.base.NotesIntent
 import com.hansheung.mob21firebase.core.service.AuthService
 import dagger.hilt.android.lifecycle.HiltViewModel
 
@@ -12,19 +13,18 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AddNoteViewModel@Inject constructor(
-    private val authService: AuthService,
-    private val repo: NotesRepo
-) : BaseManageNoteViewModel() {
+    private val repo: NotesRepo,
+    authService: AuthService
+) : BaseManageNoteViewModel(authService) {
 
     override fun handleIntent(intent: NotesIntent){
-        submitNote((intent as NotesIntent.AddNote).note)
+        when(intent){
+            is NotesIntent.SubmitNote -> addNote(intent.note)
+            else -> Unit
+        }
     }
 
-    fun logout(){
-        authService.logout()
-    }
-
-    private fun submitNote(note: Note) {
+    private fun addNote(note: Note) {
         viewModelScope.launch {
             errorHandler {
                 require(note.title.isNotEmpty()){"Title cannot be empty"}
@@ -37,6 +37,4 @@ class AddNoteViewModel@Inject constructor(
 
 }
 
-sealed class NotesIntent {
-    data class AddNote(val note: Note) : NotesIntent()
-}
+

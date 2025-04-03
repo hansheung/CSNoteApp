@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_homeFragment_to_manageNoteFragment"
             app:destination="@id/manageNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -44,5 +47,30 @@
         android:id="@+id/manageNoteFragment"
         android:name="com.hansheung.csnoteapp.ui.manageNote.addNote.AddNoteFragment"
         android:label="manageNoteFragment"
-        tools:layout="@layout/fragment_manage_note"/>
+        tools:layout="@layout/fragment_manage_note">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.hansheung.csnoteapp.ui.manageNote.updateNote.NoteDetailFragment"
+        android:label="NoteDetailFragment"
+        tools:layout="@layout/fragment_note_detail"
+        >
+    <argument android:name="id"
+        app:argType="string"
+        />
+        <action
+            android:id="@+id/action_noteDetailFragment_to_updateNoteFragment"
+            app:destination="@id/updateNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateNoteFragment"
+        android:name="com.hansheung.csnoteapp.ui.manageNote.updateNote.UpdateNoteFragment"
+        android:label="UpdateNoteFragment"
+        tools:layout="@layout/fragment_manage_note">
+    <argument android:name="id"
+        app:argType="string"
+        />
+    </fragment>
 </navigation>
