@@ -7,9 +7,10 @@
     <color name="green">#00FF00</color>
     <color name="cyan">#00FFFF</color>
     <color name="red">#FF0000</color>
-    <color name="purple">#800080</color>
-    <color name="yellow">#FFD700</color>
+    <color name="purple">#A45EE9</color>
+    <color name="yellow">#FFFF00</color>
     <color name="grey">#E7E7E7</color>
     <color name="blueBtn">#3291ff</color>
     <color name="redBtn">#b32d2c</color>
+    <color name="blackBtn">#FF000000</color>
 </resources>

@@ -1,6 +1,5 @@
 package com.hansheung.mob21firebase.ui.user.registration
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hansheung.mob21firebase.core.service.AuthService
 import com.hansheung.mob21firebase.ui.base.BaseViewModel

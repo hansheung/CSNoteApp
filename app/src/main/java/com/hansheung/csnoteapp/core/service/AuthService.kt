@@ -10,5 +10,4 @@ interface AuthService {
     fun logout()
     fun getLoggedInUser(): FirebaseUser?
     fun getUid():String?
-
 }

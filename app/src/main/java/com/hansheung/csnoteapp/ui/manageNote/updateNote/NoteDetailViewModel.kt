@@ -7,7 +7,6 @@ import com.hansheung.csnoteapp.ui.manageNote.base.BaseManageNoteState
 import com.hansheung.csnoteapp.ui.manageNote.base.BaseManageNoteViewModel
 import com.hansheung.csnoteapp.ui.manageNote.base.NotesIntent
 import com.hansheung.mob21firebase.core.service.AuthService
-import com.hansheung.mob21firebase.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

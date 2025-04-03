@@ -2,7 +2,6 @@ package com.hansheung.mob21firebase.ui.user.registration
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.hansheung.csnoteapp.databinding.FragmentRegisterBinding
 import com.hansheung.mob21firebase.ui.base.BaseFragment
-import com.hansheung.mob21firebase.ui.user.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -47,8 +45,6 @@ class RegisterFragment : BaseFragment() {
                         showSuccess(view, "Successfully Registered")
                     }
                 }
-
-                //findNavController().popBackStack()
             }
         }
     }

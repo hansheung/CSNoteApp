@@ -5,5 +5,4 @@ fun String.crop(count: Int): String {
         return this
     }
     return this.take(count) + "..."
-    //return this.substring(0,count)+"..."
 }

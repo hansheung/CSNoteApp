@@ -1,8 +1,6 @@
 package com.hansheung.mob21firebase.ui.user.login
 
 import android.content.Context
-import android.util.Log
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hansheung.mob21firebase.core.service.AuthService
 import com.hansheung.mob21firebase.ui.base.BaseViewModel
@@ -24,7 +22,6 @@ class LoginViewModel @Inject constructor (
     fun login(email: String, pass:String){
         viewModelScope.launch (Dispatchers.IO) {
             errorHandler {
-                //throw CustomException("Login fail")
                 val res = authService.login(email,pass)
                 if(res){
                     _success.emit(Unit)

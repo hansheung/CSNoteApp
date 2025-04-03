@@ -6,117 +6,119 @@
                     type="com.hansheung.note_taking.ui.addNote.AddNoteViewModel" />
         </data>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_margin="16dp">
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"/>
-
-        <TextView
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="Title"/>
-
-        <EditText
-            android:id="@+id/etTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter title"
-            android:background="@drawable/edit_text_bg"
-            android:minLines="2"
-            android:maxLines="4"
-            android:gravity="start"
-            android:padding="10dp"
-            android:scrollbars="vertical"
-            android:overScrollMode="always"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:layout_height="wrap_content"
-            android:text="Description" />
-
-        <EditText
-            android:id="@+id/etDesc"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:hint="Enter description"
-            android:background="@drawable/edit_text_bg"
-            android:minLines="10"
-            android:maxLines="15"
-            android:gravity="start"
-            android:padding="10dp"
-            android:scrollbars="vertical"
-            android:overScrollMode="always"
-
-            />
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginBottom="16dp">
-                <View
-                    android:id="@+id/colorBox1"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@color/green"
-                    android:layout_marginHorizontal="8dp"/>
+            android:layout_margin="@dimen/m">
 
-                <View
-                    android:id="@+id/colorBox2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@color/cyan"
-                    android:layout_marginHorizontal="8dp"/>
+                <Space
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="@dimen/zero"
+                    android:layout_weight="0.2"/>
 
-                <View
-                    android:id="@+id/colorBox3"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@color/red"
-                    android:layout_marginHorizontal="8dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/xxs"
+                    android:text="@string/title"/>
 
-                <View
-                    android:id="@+id/colorBox4"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@color/purple"
-                    android:layout_marginHorizontal="8dp"/>
+                <EditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_title"
+                    android:background="@drawable/edit_text_bg"
+                    android:minLines="2"
+                    android:maxLines="4"
+                    android:gravity="start"
+                    android:padding="@dimen/xs"
+                    android:scrollbars="vertical"
+                    android:overScrollMode="always"/>
 
-                <View
-                    android:id="@+id/colorBox5"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@color/yellow"
-                    android:layout_marginHorizontal="8dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/m"
+                    android:layout_marginBottom="@dimen/xs"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description" />
+
+                <EditText
+                    android:id="@+id/etDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/enter_desc"
+                    android:background="@drawable/edit_text_bg"
+                    android:minLines="10"
+                    android:maxLines="15"
+                    android:gravity="start"
+                    android:padding="@dimen/xs"
+                    android:scrollbars="vertical"
+                    android:overScrollMode="always" />
+
+                <Space
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="@dimen/zero"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/m">
+
+                        <View
+                            android:id="@+id/colorBox1"
+                            android:layout_width="@dimen/colorbox"
+                            android:layout_height="@dimen/colorbox"
+                            android:background="@color/green"
+                            android:layout_marginHorizontal="@dimen/xxs"/>
+
+                        <View
+                            android:id="@+id/colorBox2"
+                            android:layout_width="@dimen/colorbox"
+                            android:layout_height="@dimen/colorbox"
+                            android:background="@color/cyan"
+                            android:layout_marginHorizontal="@dimen/xxs"/>
+
+                        <View
+                            android:id="@+id/colorBox3"
+                            android:layout_width="@dimen/colorbox"
+                            android:layout_height="@dimen/colorbox"
+                            android:background="@color/red"
+                            android:layout_marginHorizontal="@dimen/xxs"/>
+
+                        <View
+                            android:id="@+id/colorBox4"
+                            android:layout_width="@dimen/colorbox"
+                            android:layout_height="@dimen/colorbox"
+                            android:background="@color/purple"
+                            android:layout_marginHorizontal="@dimen/xxs"/>
+
+                        <View
+                            android:id="@+id/colorBox5"
+                            android:layout_width="@dimen/colorbox"
+                            android:layout_height="@dimen/colorbox"
+                            android:background="@color/yellow"
+                            android:layout_marginHorizontal="@dimen/xxs"/>
+
+                </LinearLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/blackBtn"
+                    app:cornerRadius="5dp"
+                    android:layout_gravity="center" />
 
         </LinearLayout>
-
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSubmit"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            android:backgroundTint="@color/blueBtn"
-            app:cornerRadius="5dp"
-            android:layout_gravity="center" />
-
-    </LinearLayout>
 </layout>
