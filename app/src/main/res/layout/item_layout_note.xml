@@ -6,46 +6,32 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        android:layout_margin="8dp"
-
-        >
+        app:cardCornerRadius="@dimen/xxs"
+        app:cardElevation="@dimen/xxxxs"
+        android:layout_margin="@dimen/xxs">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="@dimen/m">
 
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
+                android:textSize="@dimen/giant_text_size"
                 android:textStyle="bold"
-                android:hint="Title" />
+                android:hint="@string/title" />
 
             <TextView
                 android:id="@+id/tvDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp"
+                android:textSize="@dimen/extra_large_text_size"
+                android:layout_marginTop="@dimen/xxs"
                 android:maxLines="5"
-                android:hint="Description"/>
-
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:textSize="18sp"-->
-<!--                android:layout_marginTop="8dp"-->
-<!--                android:maxLines="3"-->
-<!--                android:ellipsize="end"-->
-<!--                android:text="@{note.desc}"-->
-<!--                android:hint="Description"/>-->
-
-
+                android:hint="@string/description" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

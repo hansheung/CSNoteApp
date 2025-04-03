@@ -1,20 +1,16 @@
 package com.hansheung.csnoteapp.ui.manageNote.updateNote
 
-import android.graphics.Color
 import android.text.Editable
 import android.util.Log
 import android.view.View
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.hansheung.csnoteapp.R
-import com.hansheung.csnoteapp.data.model.Note
 import com.hansheung.csnoteapp.ui.manageNote.base.BaseManageNoteFragment
 import com.hansheung.csnoteapp.ui.manageNote.base.NotesIntent
-import com.hansheung.note_taking.ui.addNote.AddNoteViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -44,7 +40,8 @@ class UpdateNoteFragment : BaseManageNoteFragment() {
 
             lifecycleScope.launch {
                 viewModel.finish.collect{
-                    findNavController().popBackStack()
+                    val action = UpdateNoteFragmentDirections.actionUpdateToHome()
+                    findNavController().navigate(action)
                 }
             }
         }

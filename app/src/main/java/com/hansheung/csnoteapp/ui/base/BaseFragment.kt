@@ -3,7 +3,6 @@ package com.hansheung.mob21firebase.ui.base
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -14,7 +13,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.hansheung.csnoteapp.R
 import com.hansheung.csnoteapp.ui.HomeFragmentDirections
 import kotlinx.coroutines.launch
-
 
 abstract class BaseFragment: Fragment() {
 
@@ -29,7 +27,6 @@ abstract class BaseFragment: Fragment() {
 
     protected open fun onFragmentResult(){}
 
-    //
     protected open fun setupViewModelObserver(){
         lifecycleScope.launch {
             viewModel.error.collect{
@@ -38,7 +35,6 @@ abstract class BaseFragment: Fragment() {
         }
     }
 
-    //Anything has to do with UI
     protected open fun setupUiComponents(view: View){
         val toolBarLayout = requireActivity().findViewById<LinearLayout>(R.id.toolbarLayout)
         toolBarLayout.visibility = View.VISIBLE

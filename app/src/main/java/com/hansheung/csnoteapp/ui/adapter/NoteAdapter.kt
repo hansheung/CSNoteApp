@@ -4,7 +4,6 @@ import android.graphics.Color
 import com.hansheung.csnoteapp.data.model.Note
 import com.hansheung.csnoteapp.databinding.ItemLayoutNoteBinding
 import com.hansheung.mob22_mvi.core.crop
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -65,8 +64,6 @@ class NoteAdapter(
 
     interface ClickListener {
         fun onClickItem(item: Note)
-
         fun onLongClickItem(item: Note)
-
     }
 }

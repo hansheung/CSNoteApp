@@ -2,7 +2,6 @@ package com.hansheung.mob21firebase.ui.user.login
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +9,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.hansheung.csnoteapp.databinding.FragmentLoginBinding
 import com.hansheung.mob21firebase.ui.base.BaseFragment
-import com.hansheung.mob21firebase.ui.base.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class LoginFragment : BaseFragment() {
@@ -40,7 +36,6 @@ class LoginFragment : BaseFragment() {
             viewModel.login(
                 binding.etEmail.text.toString(),
                 binding.etPassword.text.toString()
-
             )
         }
 

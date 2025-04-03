@@ -62,8 +62,6 @@ abstract class BaseManageNoteFragment: BaseFragment() {
 
             }
         }
-
-
     }
 
 }

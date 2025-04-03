@@ -72,5 +72,10 @@
     <argument android:name="id"
         app:argType="string"
         />
+        <action
+            android:id="@+id/action_update_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>

@@ -1,6 +1,5 @@
 package com.hansheung.csnoteapp.data.repo
 
-import android.util.Log
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -9,7 +8,6 @@ import com.hansheung.csnoteapp.core.CustomException
 import com.hansheung.csnoteapp.data.model.Note
 import com.hansheung.mob21firebase.core.service.AuthService
 import kotlinx.coroutines.channels.awaitClose
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.tasks.await
 

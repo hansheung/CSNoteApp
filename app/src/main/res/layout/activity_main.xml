@@ -8,25 +8,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Toolbar Area -->
     <LinearLayout
         android:id="@+id/toolbarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:padding="12dp"
+        android:padding="@dimen/s"
         android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:visibility="gone"
-        >
+        android:elevation="@dimen/xxxxs"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/toolbarTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="My Notes"
+            android:text="@string/my_notes"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:gravity="center"
@@ -36,11 +34,11 @@
             android:id="@+id/tvLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logout"
+            android:text="@string/logout"
             android:textColor="@color/white"
             android:textStyle="bold"/>
-    </LinearLayout>
 
+    </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/navHostFragment"
@@ -48,7 +46,6 @@
         android:layout_height="match_parent"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost = "true"
-        app:navGraph = "@navigation/nav_graph"
-        />
+        app:navGraph = "@navigation/nav_graph" />
 
 </LinearLayout>

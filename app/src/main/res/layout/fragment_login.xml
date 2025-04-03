@@ -13,92 +13,82 @@
         android:id="@+id/tvGreetings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="Welcome"
-        android:textSize="20dp"
+        android:layout_marginBottom="@dimen/xxxxl"
+        android:text="@string/welcome"
+        android:textSize="@dimen/giant_text_size"
         android:textStyle="bold"/>
-
-
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="4dp"
-        android:textStyle="bold"
-        />
+        android:text="@string/email"
+        android:layout_marginHorizontal="@dimen/m"
+        android:layout_marginBottom="@dimen/xxxxs"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="28dp"
-        android:hint="Enter email"
+        android:layout_marginHorizontal="@dimen/m"
+        android:layout_marginBottom="@dimen/xl"
+        android:hint="@string/enter_email"
         style="@style/TodoApp.EditText" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="4dp"
-        android:textStyle="bold"
-        />
+        android:text="@string/password"
+        android:layout_marginHorizontal="@dimen/m"
+        android:layout_marginBottom="@dimen/xxxxs"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etPassword"
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:hint="Enter password"
+        android:layout_marginHorizontal="@dimen/m"
+        android:hint="@string/enter_password"
         style="@style/TodoApp.EditText" />
 
-
-
     <com.google.android.material.button.MaterialButton
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/xxl"
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cornerRadius="10dp"
-        android:text="Login"/>
+        app:cornerRadius="@dimen/xs"
+        android:text="@string/login"/>
 
     <com.google.android.material.button.MaterialButton
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/xxs"
         android:id="@+id/btnGoogleLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableEnd="@drawable/ic_google"
-        android:text="Login with Google"/>
-
+        android:text="@string/login_with_google"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_margin="16sp"
-        android:layout_gravity="center"
-        >
+        android:layout_margin="@dimen/m"
+        android:layout_gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Not a user, click here to "
-            android:gravity="center"
-            />
+            android:text="@string/not_a_user"
+            android:gravity="center" />
+
         <TextView
             android:id="@+id/tvRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/purple"
             android:textStyle="bold"
-            android:text="Register"
-            android:gravity="center"
-            />
+            android:text="@string/register"
+            android:gravity="center" />
 
     </LinearLayout>
-
-
 </LinearLayout>

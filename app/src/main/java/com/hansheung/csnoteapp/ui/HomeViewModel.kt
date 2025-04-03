@@ -27,10 +27,13 @@ class HomeViewModel @Inject constructor(
     private val _empty = MutableStateFlow(true)
     val empty: StateFlow<Boolean> = _empty
 
+    private var allNotes: List<Note> = emptyList()
+
     fun handleIntent(intent: NotesIntent){
         when(intent){
             NotesIntent.LoadNotes -> loadNotes()
             is NotesIntent.DeleteNote -> delete(intent.noteId)
+            is NotesIntent.SearchNotes -> searchNotes(intent.query)
         }
     }
 
@@ -38,8 +41,26 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch (Dispatchers.IO){
             _state.value = _state.value.copy(isLoading = true)
             repo.getNotes().collect { notes ->
+
+                allNotes = notes
                 _state.value = NotesState(notes = notes)
                 _empty.update{ notes.isEmpty() }
+            }
+        }
+    }
+
+    private fun searchNotes(query: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            if (query.isEmpty()) {
+                _state.value = NotesState(notes = allNotes)
+                _empty.update { allNotes.isEmpty() }
+            } else {
+                val filteredNotes = allNotes.filter { note ->
+                    note.title.contains(query, ignoreCase = true) ||
+                            note.desc.contains(query, ignoreCase = true)
+                }
+                _state.value = NotesState(notes = filteredNotes)
+                _empty.update { filteredNotes.isEmpty() }
             }
         }
     }
@@ -55,6 +76,7 @@ class HomeViewModel @Inject constructor(
 sealed class NotesIntent {
     object LoadNotes : NotesIntent()
     data class DeleteNote(val noteId: String) : NotesIntent()
+    data class SearchNotes(val query: String) : NotesIntent()
 }
 
 data class NotesState(
