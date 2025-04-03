@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.user.login.LoginFragment"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:layout_marginHorizontal="@dimen/m"
+        android:layout_marginBottom="@dimen/xxxxs"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/m"
+        android:layout_marginBottom="@dimen/xl"
+        android:hint="@string/enter_email"
+        style="@style/TodoApp.EditText" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:layout_marginHorizontal="@dimen/m"
+        android:layout_marginBottom="@dimen/xxxxs"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/m"
+        android:layout_marginBottom="@dimen/xxm"
+        android:hint="@string/enter_password"
+        style="@style/TodoApp.EditText" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm_password"
+        android:layout_marginHorizontal="@dimen/m"
+        android:layout_marginBottom="@dimen/xxxxs"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etPassword2"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/m"
+        android:hint="@string/confirm_password"
+        style="@style/TodoApp.EditText" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_marginTop="@dimen/xxl"
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cornerRadius="@dimen/xs"
+        android:text="@string/register"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/m"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_registered_back_to"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple"
+            android:textStyle="bold"
+            android:text="@string/login"
+            android:gravity="center" />
+
+    </LinearLayout>
+</LinearLayout>

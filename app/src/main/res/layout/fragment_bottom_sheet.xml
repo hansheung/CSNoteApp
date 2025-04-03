@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_background"
+    android:padding="@dimen/m">
+
+    <View
+        android:layout_width="@dimen/xxxxl"
+        android:layout_height="@dimen/xxxxs"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/m"
+        android:background="#CCCCCC" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/options"
+        android:textSize="@dimen/extra_large_text_size"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/m" />
+
+    <LinearLayout
+        android:id="@+id/edit_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/s"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="@dimen/l"
+            android:layout_height="@dimen/l"
+            android:src="@drawable/ic_edit"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit"
+            android:textSize="@dimen/large_text_size"
+            android:layout_marginStart="@dimen/m"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/delete_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/s"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="@dimen/l"
+            android:layout_height="@dimen/l"
+            android:src="@drawable/ic_delete"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            android:textColor="#FF5252"
+            android:textSize="@dimen/large_text_size"
+            android:layout_marginStart="@dimen/m"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+</LinearLayout>

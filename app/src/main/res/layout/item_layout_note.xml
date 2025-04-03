@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvNote"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/xxs"
+        app:cardElevation="@dimen/xxxxs"
+        android:layout_margin="@dimen/xxs">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/m">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/giant_text_size"
+                android:textStyle="bold"
+                android:hint="@string/title" />
+
+            <TextView
+                android:id="@+id/tvDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/extra_large_text_size"
+                android:layout_marginTop="@dimen/xxs"
+                android:maxLines="5"
+                android:hint="@string/description" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>

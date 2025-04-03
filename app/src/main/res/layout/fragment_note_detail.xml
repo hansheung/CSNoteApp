@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+        <data>
+                <variable
+                    name="viewModel"
+                    type="com.hansheung.csnoteapp.ui.manageNote.updateNote.NoteDetailViewModel" />
+        </data>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:orientation="vertical"
+            android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sm">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/etTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/enter_title"
+                                    android:minLines="2"
+                                    android:maxLines="4"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/extra_giant_text_size"
+                                    android:layout_marginHorizontal="@dimen/m"
+                                    android:layout_marginVertical="@dimen/m" />
+
+                        </ScrollView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/etDesc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/enter_desc"
+                                    android:minLines="8"
+                                    android:textSize="@dimen/huge_text_size"
+                                    android:layout_marginHorizontal="@dimen/m" />
+
+                        </ScrollView>
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="@dimen/zero"
+                    android:layout_weight="1"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEdit"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/xxl"
+                    android:text="@string/edit"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/blackBtn"
+                    app:cornerRadius="5dp"
+                    android:layout_gravity="center" />
+
+        </LinearLayout>
+</layout>
